@@ -1,0 +1,20 @@
+body {
+    margin:auto;
+    font-family: sans-serif;
+
+    /*background: #9C1A1C;*/
+}
+table ,th,td{
+    /*border-style: solid;*/
+    border:black solid 1px;
+
+
+}
+#content{
+    widht:70%;
+}
+td{
+    /*width:100%;*/
+    width:100px;
+    text-align: center;
+}
