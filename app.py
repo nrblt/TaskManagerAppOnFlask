@@ -1,15 +1,10 @@
-# from urllib import request
-
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-# from config import config
-import sys
-# from flask.ext.sqlalchemy import SQLAlchemy
+
 
 app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']= 'mysql://root:root@127.0.0.1:8889/FlaskDB'
-# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 
 db=SQLAlchemy(app)
 # a
@@ -23,22 +18,9 @@ class Todo(db.Model):
         return '<Task %r>' % self.id
 
 
-
-# class Example(db.Model):
-#     __tablename__ = 'example'
-#     id = db.Column('id', db.Integer, primary_key=True)
-#     data = db.Column('data', db.Unicode)
-#     def __init__(self,id,data):
-#         self.id = id
-#         self.data = data
-# #
-# new_ex = Example(5,'fifth entry')
-# db.session.add(new_ex)
-# db.session.commit()
 @app.route('/',methods=['GET','POST'])
 def index():
     if request.method=='POST':
-        # return "HEllo"
         taskContent=request.form['content']
         newTask=Todo(content=taskContent)
 
